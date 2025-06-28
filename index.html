@@ -212,6 +212,9 @@
             </div>
         </div>
 
+        <!-- Custom Animated Cursor -->
+        <div id="custom-cursor"></div>
+
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script>
             var typed = new Typed('#element', {
@@ -245,6 +248,33 @@
                     modal.style.display = 'none';
                 }
             };
+            // Custom Cursor Logic
+            const cursor = document.getElementById('custom-cursor');
+            let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+            document.addEventListener('mousemove', function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            function animateCursor() {
+                cursorX += (mouseX - cursorX) * 0.18;
+                cursorY += (mouseY - cursorY) * 0.18;
+                cursor.style.transform = `translate3d(${cursorX - 18}px, ${cursorY - 18}px, 0)`;
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+            // Scale on click
+            document.addEventListener('mousedown', () => {
+                cursor.classList.add('cursor-click');
+            });
+            document.addEventListener('mouseup', () => {
+                cursor.classList.remove('cursor-click');
+            });
+            // Scale on hover for interactive elements
+            const interactive = document.querySelectorAll('a, button, .btn, .proj a, .links');
+            interactive.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+            });
         </script>
     </body>
 

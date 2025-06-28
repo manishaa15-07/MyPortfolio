@@ -3,9 +3,24 @@ html {
 }
 
 body {
-  background-color: black;
+  background: linear-gradient(120deg, #181c2b 0%, #232526 100%);
   color: white;
   font-family: 'Poppins';
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  animation: gradientBG 12s ease-in-out infinite alternate;
+  cursor: none !important;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 nav {
@@ -39,12 +54,12 @@ nav ul li a::after {
   content: '';
   width: 0px;
   height: 5px;
-  background: green;
   position: absolute;
   left: 0;
   bottom: -10px;
   border-radius: 20px;
   transition: 0.5s;
+  background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
 }
 
 nav ul li a:hover::after {
@@ -76,6 +91,7 @@ nav ul li a:hover::after {
   text-fill-color: transparent;
   font-size: 3rem;
   font-weight: 600;
+  text-shadow: 0 0 16px #7eeed0, 0 0 32px #1fa2ff99;
 }
 
 .firstsection {
@@ -88,6 +104,7 @@ nav ul li a:hover::after {
   margin-left: 80px;
   margin-top: 150px;
   font-size: 2rem;
+  width: 40%;
 }
 
 .leftsec span {
@@ -95,12 +112,18 @@ nav ul li a:hover::after {
 }
 
 .rightsec {
-  margin-left: 100px;
+  /* margin-left: 100px; */
+  margin-top: 100px;
 }
 
 .rightsec img {
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  box-shadow: 0 8px 32px 0 #1fa2ff33, 0 1.5px 8px 0 #7eeed033;
+  background: linear-gradient(120deg, #7eeed0 0%, #1fa2ff 100%);
+  padding: 8px;
+  animation: none;
 }
 
 #element {
@@ -111,19 +134,17 @@ nav ul li a:hover::after {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  text-shadow: 0 0 16px #7eeed0, 0 0 32px #1fa2ff99;
 }
 
 #projj {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 50px;
+
 }
 
-.proj-image img {
-  margin-left: 30px;
-  width: 300px;
-  height: 300px;
-}
+
 
 .proj-info {
   padding-left: 50px;
@@ -132,10 +153,7 @@ nav ul li a:hover::after {
   padding-bottom: 25px;
 }
 
-.proj-image {
-  width: 500px;
-  padding-left: 0px;
-}
+
 
 .proj a {
   padding-left: 50px;
@@ -148,15 +166,19 @@ nav ul li a:hover::after {
 }
 
 .proj:hover {
-  box-shadow: 0px -5px 10px 0px rgba(236, 233, 233, 0.5)
+  transform: none;
+  box-shadow: 0 16px 40px 0 #1fa2ff22, 0 2px 12px 0 #7eeed022;
+  z-index: 2;
 }
 
 .proj {
   width: 25%;
   border-radius: 20px;
-  box-shadow: 0px -5px 10px 0px rgba(237, 218, 218, 0.5);
-
-  padding-bottom: 15px;
+  box-shadow: 0 8px 32px 0 rgba(223, 224, 241, 0.15);
+  /* padding-bottom: 15px; */
+  padding: 20px;
+  transition: box-shadow 0.25s;
+  will-change: auto;
 }
 
 .proj-container {
@@ -166,6 +188,7 @@ nav ul li a:hover::after {
   align-items: stretch;
   gap: 40px;
   margin-bottom: 60px;
+  perspective: none;
 }
 
 #about {
@@ -203,16 +226,17 @@ nav ul li a:hover::after {
   content: '';
   width: 0px;
   height: 5px;
-  background: green;
   position: absolute;
   left: 0;
   bottom: -10px;
   border-radius: 20px;
   transition: 0.5s;
+  background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
 }
 
 .active::after {
   width: 50%;
+  background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
 }
 
 .tabcontent {
@@ -227,7 +251,12 @@ nav ul li a:hover::after {
 }
 
 .tabcontent span {
-  color: green;
+  background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 16px #7eeed0, 0 0 32px #1fa2ff99;
   font-weight: 500;
 }
 
@@ -266,7 +295,13 @@ nav ul li a:hover::after {
 
 .contact-left i {
   font-size: 20px;
-  color: green;
+  /* color: green; */
+  background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 16px #7eeed0, 0 0 32px #1fa2ff99;
   margin-top: 20px;
   margin-right: 10px;
 }
@@ -278,10 +313,6 @@ nav ul li a:hover::after {
   display: inline-block;
 }
 
-.social i:hover {
-  color: rgb(12, 94, 94);
-
-}
 
 .btn {
   background: linear-gradient(90deg, #7eeed0 0%, #1fa2ff 100%);
@@ -296,6 +327,14 @@ nav ul li a:hover::after {
   outline: none;
   border: black;
   margin-bottom: 50px;
+  box-shadow: 0 4px 16px 0 #1fa2ff55, 0 1.5px 8px 0 #7eeed055;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.btn:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 2px 6px 0 #1fa2ff33;
 }
 
 .contact-right {
@@ -319,28 +358,6 @@ form textarea {
 }
 
 /* --- Enhanced Projects Section Styles --- */
-.proj {
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
-  border-radius: 22px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
-  padding: 32px 24px 24px 24px;
-  width: 58%;
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
-  border: 1.5px solid rgba(126, 238, 208, 0.12);
-}
-
-.proj:hover {
-  transform: scale(1.045) translateY(-8px);
-  box-shadow: 0 16px 40px 0 rgba(126, 238, 208, 0.25), 0 2px 8px 0 rgba(0, 0, 0, 0.10);
-  border-color: #7eeed0;
-}
-
 .proj-info {
   padding: 0;
   font-size: 1.08rem;
@@ -382,8 +399,14 @@ form textarea {
   text-decoration: none;
   font-size: 1.08rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px 0 rgba(126, 238, 208, 0.10);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px 0 #1fa2ff55, 0 1.5px 8px 0 #7eeed055;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.proj a:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 2px 6px 0 #1fa2ff33;
 }
 
 .proj a:hover {
@@ -444,4 +467,68 @@ form textarea {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* Optional: Subtle floating particles (CSS only, lightweight) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.12;
+  z-index: 0;
+  animation: particlesMove 18s linear infinite alternate;
+}
+
+@keyframes particlesMove {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 120px 80px;
+  }
+}
+
+/* Optional: Custom pointer for interactive elements */
+a,
+button,
+.btn,
+.proj a,
+.links {
+  cursor: url('https://cdn.jsdelivr.net/gh/curzr/cursors@master/dist/cursor1-link.cur'), pointer;
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  background: linear-gradient(120deg, #7eeed0 0%, #1fa2ff 100%);
+  box-shadow: 0 0 24px 6px #7eeed088, 0 0 48px 0 #1fa2ff44;
+  border: 2.5px solid #fff;
+  opacity: 0.92;
+  transition: transform 0.18s cubic-bezier(.4, 2, .6, 1), box-shadow 0.18s, opacity 0.18s;
+  mix-blend-mode: lighten;
+  will-change: transform, box-shadow, opacity;
+}
+
+#custom-cursor.cursor-hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 32px 12px #1fa2ffcc, 0 0 64px 0 #7eeed0cc;
+  opacity: 1;
+}
+
+#custom-cursor.cursor-click {
+  transform: scale(0.85);
+  box-shadow: 0 0 16px 2px #7eeed0cc, 0 0 32px 0 #1fa2ffcc;
+  opacity: 0.85;
 }
